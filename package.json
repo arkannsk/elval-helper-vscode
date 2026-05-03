@@ -1,0 +1,91 @@
+{
+  "name": "elval-helper",
+  "displayName": "ElVal Helper",
+  "description": "Syntax highlighting and autocomplete for ElVal annotations in Go.",
+  "version": "0.1.0",
+  "publisher": "arkannsk",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:go"
+  ],
+  "main": "./out/extension.js",
+    "contributes": {
+    "grammars": [
+      {
+        "language": "go",
+        "scopeName": "comment.elval.golang",
+        "path": "./syntaxes/elval.tmLanguage.json",
+        "injectTo": ["source.go"]
+      }
+    ],
+    "colors": [
+      {
+        "id": "elval.directive",
+        "description": "Color for @evl: and @oa: directives",
+        "defaults": {
+          "dark": "#FF9900",
+          "light": "#CC7832",
+          "highContrast": "#FF9900"
+        }
+      },
+      {
+        "id": "elval.param.simple",
+        "description": "Color for simple ElVal params like 'required'",
+        "defaults": {
+          "dark": "#A5C261",
+          "light": "#008000",
+          "highContrast": "#A5C261"
+        }
+      },
+      {
+        "id": "elval.param.kv",
+        "description": "Color for KV ElVal params like 'min:'",
+        "defaults": {
+          "dark": "#FFC66D",
+          "light": "#0000FF",
+          "highContrast": "#FFC66D"
+        }
+      },
+      {
+        "id": "elval.value",
+        "description": "Color for values after ':' in ElVal",
+        "defaults": {
+          "dark": "#A5C261",
+          "light": "#008000",
+          "highContrast": "#A5C261"
+        }
+      },
+      {
+        "id": "oa.key",
+        "description": "Color for @oa: keys",
+        "defaults": {
+          "dark": "#BBB529",
+          "light": "#808000",
+          "highContrast": "#BBB529"
+        }
+      },
+      {
+        "id": "oa.location",
+        "description": "Color for @oa:in locations (query, header...)",
+        "defaults": {
+          "dark": "#9876AA",
+          "light": "#800080",
+          "highContrast": "#9876AA"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.118.0",
+    "typescript": "^5.4.5"
+  }
+}
