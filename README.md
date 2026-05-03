@@ -1,7 +1,3 @@
-Конечно! Вот профессиональный `README.md` на английском языке, готовый для публикации на GitHub или VS Code Marketplace.
-
----
-
 # ElVal Helper for VS Code
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
